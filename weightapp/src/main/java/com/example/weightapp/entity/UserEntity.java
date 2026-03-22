@@ -3,8 +3,6 @@ package com.example.weightapp.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,15 +15,15 @@ import lombok.Data;
 @Data
 public class UserEntity {
 
-	@Id
+	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String name;
 	
-	private String loginIid;
+	private String loginId;
 	
-	@Column(name = "password_hash", nullable = false, unique = true)
+	@Column(name = "password_hash", nullable = false)
 	private String passwordHash;
 	
 	@Column(name = "created_at", nullable = false)
